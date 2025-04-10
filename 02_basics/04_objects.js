@@ -1,82 +1,102 @@
-// const tinderUser = new Object()
-const tinderUser = {}
+// Object sngleTon using constructor 
 
-tinderUser.id = "123abc"
-tinderUser.name = "Sammy"
-tinderUser.isLoggedIn = false
+// SINGLETON OBJECT
+const tinderuser = new Object();
 
-// console.log(tinderUser);
+// NON-SINGLETON OBJECT 
+// const tinderUser = {}
 
-const regularUser = {
-    email: "some@gmail.com",
+
+tinderuser.id = "1234abc"
+tinderuser.name = "RupaDarling"
+tinderuser.isLog = false
+
+// console.log(tinderuser)
+
+// Now lets take Object into Object
+
+const kukoFm = {
+    name: "Prachi",
+    email: "rupeshdhaibhate@gmail.com",
     fullname: {
-        userfullname: {
-            firstname: "hitesh",
-            lastname: "choudhary"
+        userFullname: {
+            firstName: "Rupesh",
+            lastName: "Dhaibhate",
+            school: {
+                primarySchool: "Railway",
+                secondarySchool: "Tapti",
+                highSchool: "VIT UNIVERSITY",
+            }
         }
     }
 }
 
-// console.log(regularUser.fullname.userfullname.firstname);
+console.log(kukoFm.fullname.userFullname.school.primarySchool)
 
-const obj1 = {1: "a", 2: "b"}
-const obj2 = {3: "a", 4: "b"}
-const obj4 = {5: "a", 6: "b"}
+// How to combine objects 
+const obj1 = { 1: "a", 2: "b" }
+const obj2 = { 3: "c", 4: "d" }
 
-// const obj3 = { obj1, obj2 }
-// const obj3 = Object.assign({}, obj1, obj2, obj4)
+const combine_obj = { ...obj1, ...obj2 }
+console.log(combine_obj)
 
-const obj3 = {...obj1, ...obj2}
-// console.log(obj3);
+const combine_obj2 = Object.assign(obj1, obj2);
+console.log(combine_obj2)
+
+// How object.assign work
+// assign(Target , Source)
+// Sorce ka sara copy karo aur target mai dal to 
+// target ke size change ho jate hai 
+// **All properties of obj2 is copies to obj1**
+
+// Obj1 change ho gaya --> same rakna hai 
+// const combine = Object.assign({},obj1 , obj2)
+//  ye combine mai saro ko daal dega 
+// {} --> Act as TARGET and baki jo hai --> Act as SOURCE
 
 
-const users = [
+// Interview Q --> Object.assign() is used to copy the properties form one or more source object to target object 
+
+// Tu ...spread operator bhi use kar sakta hai 
+// dono method js ke new aur clean systex wale hai 
+
+
+// ********Some more important points*******
+
+// part 1
+const myhome = [
+
+
     {
         id: 1,
-        email: "h@gmail.com"
+        name: "Home1"
     },
     {
-        id: 1,
-        email: "h@gmail.com"
+        id: 2,
+        name: "Home2"
+
     },
     {
-        id: 1,
-        email: "h@gmail.com"
-    },
+        id: 3,
+        name: "Home3"
+    }
 ]
 
-users[1].email
-// console.log(tinderUser);
 
-// console.log(Object.keys(tinderUser));
-// console.log(Object.values(tinderUser));
-// console.log(Object.entries(tinderUser));
-
-// console.log(tinderUser.hasOwnProperty('isLoggedIn'));
+console.log(myhome[0].name)
 
 
-const course = {
-    coursename: "js in hindi",
-    price: "999",
-    courseInstructor: "hitesh"
-}
+// Part 2
+// console.log(Object.keys(myhome));
+// console.log(Object.values(myhome));
 
-// course.courseInstructor
+// console.log(Object.keys(tinderuser)) // this will return array and you can apply loops and maps
+// console.log(Object.values(tinderuser)) // this also return array and you can appy loops and maps
 
-const {courseInstructor: instructor} = course
+// Part 3
+console.log(Object.entries(tinderuser))  // array ke aander array milega , aander jo array hai vo bhi [key , valye ] pair mai hoga
 
-// console.log(courseInstructor);
-console.log(instructor);
 
-// {
-//     "name": "hitesh",
-//     "coursename": "js in hindi",
-//     "price": "free"
-// }
-
-[
-    {},
-    {},
-    {}
-]
-
+// Part 4
+// When you loop through the entire object and that value if not exist then code get crash 
+console.log(tinderuser.hasOwnProperty("islog"))  // ky tere pad ye property hai         
