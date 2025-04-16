@@ -17,7 +17,7 @@ function again_print() {
 }
 // Function call
 // again_print // this is called function reference 
-again_print() // this is called function call
+// again_print() // this is called function call
 
 
 // Creating the function that will add two numbers 
@@ -64,5 +64,65 @@ function login_user_msg(username) {
 
 }
 
-console.log(login_user_msg("Rupesh"))
-console.log(login_user_msg()) // when you dont pass the value then system bydefault take it as UNDEFINED 
+// console.log(login_user_msg("Rupesh"))
+// console.log(login_user_msg()) // when you dont pass the value then system bydefault take it as UNDEFINED 
+
+
+
+
+// Lets talk about SHOPPING CART
+// Till now are are giving defined parameter , but when user add items into shopping kart , we dont how many items the user is going to add , so for that learn below 
+
+// One common confusion 
+// ... restOperator
+// ... SpreadOperator
+
+// ? innke use-case par innko use keya jata hai 
+
+function calculateCartPrice(...num1) {
+
+    return num1
+
+}
+
+// console.log(calculateCartPrice(100, 200, 300));
+// This all values will automatically get added into the arrays
+// [ 100, 200, 300 ]
+
+
+function calculateCartPrice(val1, val2, ...num1) {
+
+    return num1
+
+}
+// [ 100, 200, 300, 400 ,500 ]
+// val1 = 100
+// val2 = 200
+// ...num1 = [300 , 400 ,500]
+
+
+// ***********************************
+
+const user = {
+    name: "Rupesh",
+    price: 499
+}
+
+function handelObject(anyObject) {
+    console.log(`the user name is ${anyObject.name} and the price is ${anyObject.price}`)
+}
+
+// handelObject(user);
+handelObject({
+    name :"Prachi",
+    price :599
+})
+
+
+const arr = [200 , 400 , 500 , 600]
+function returnSecondValue(getArray){
+    return getArray[1]
+}
+
+// console.log(returnSecondValue(arr))
+console.log(returnSecondValue([100 ,200 ,300]))
