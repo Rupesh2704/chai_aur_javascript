@@ -1,83 +1,54 @@
 const user = {
     username: "Rupesh",
-    age: 25,
     price: 999,
 
     welcomeMsg: function () {
-        console.log(`${this.username} welcome to website `);
-        console.log(this)
-
+        // console.log(`${this.username} , welcome to website`)
+        console.log(this)  // this reer to current context 
     }
-    // this represent the current context
 }
 
-// user.welcomeMsg()
-// user.username = "Prachi" // here you changed the value so our context changed
-// user.welcomeMsg()
-// console.log(this)
+user.welcomeMsg()
+user.username = "Prachi"
+user.welcomeMsg()
+// here you can abel to see changes , we didnt hardcode the value of name we said that , what ever the current context change it 
+// context ka matlab hai simple values 
 
-// Note --> if you printing js in Node enviroment , and you print (this) and if there is no global scope is defined then you will get empty {}
-
-// Same thing you will print in chrome console then you will get window as an output 
-
-
-// ********************************************************
-// function rupesh(){
-//     let name = "Rupesh Dahibhate"
-//     // console.log(this)
-//     console.log(this.name)  // OUTPUT --> undefined 
-//     // You cannot use this in function 
-// }
-// rupesh();
+console.log(this)
+// here you can able to see {} empty pranthesis bez there is no global object 
+// But same thing if you do in BROWSER then the global object is WINDOW
 
 
 
-// ************************Arrow Function*********
+// -------------------- ARROW FUNCTION ----------------------------------------------------
+function one() {
+    console.log(this)
+    console.log(this.username)
+}
 
-// const chai = function (){
-//     let myname = "Rupesh"
-//     console.log(this.myname)  // undefined  
-
-// }
-// chai()
-
+one();
 
 
-// Arrow function does not support hoisting --> ReferenceError: Cannot access 'chai' before initialization
-// Arrow Function 
-// const chai = () => {
-//     let myname = "Rupesh"
-//     console.log(this.myname)  // undefined  
-//     console.log(this) // empty praenthesis {}
+// Type 2 of decleration of function 
+const chai = () => {
+    console.log(this)
 
-// }
+}
+chai();
 
 
-// ***************The real Story*********************
+/*
+Arrow function is a shorter way to write functions in JavaScript.
+The main difference is that arrow functions do not have their own this, arguments, or constructor.
+They inherit this from the parent scope, while normal functions get their own this based on how they are called.
+ */
 
-// Type 1  --> Explicit return
-// const addtwonum = (num1, num2) => {
-//     return num1 + num2
+// Implecit return
+const addtwo = (num1, num2) => num1 + num2;
+// curly brasis mai wrap kar to retun ketyword likna padega samje 
 
-// }
+// explicit matlab jab aap return keyword lagate ho 
 
-// Type 2  --> Inplicit return 
+// If you are trying to return the object then wrap it into () prenthesis
 
-// const addmynum = (num1 , num2) => (num1 + num2)
-
-
-// Type 3 
-const addmynum = (num1 , num2) => ({username :"Rupesh"})
-
-
-console.log(addmynum(5, 5))
-
-// {}  to return statement aayega aur () use hue to return statement nhi aayega 
-
-
-
-// Summery 
-// normal function have their our this 
-// Arrwo function inherit the this from parent ( global scope ) thats why undefined
-
-// Let and const variable dont support this keyword only var support
+console.log(addtwo(1, 2))
