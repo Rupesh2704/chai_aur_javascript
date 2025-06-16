@@ -39,8 +39,8 @@ for(const [key ,value] of map){
 // Apply for of loop on Object 
 
 const myObj = {
+    R : "R lang",
     js : "JavaScript",
-    R : "R lang"
 }
 
 console.log(myObj)
