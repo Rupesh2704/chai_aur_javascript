@@ -50,3 +50,4 @@ for(const [key , value] of myObj){
 }
 
 // Note --> Maps are iteratable and Objects are iteratable but by different things 
+// Bhai object ko For in loop se iterate kar sakte hai easily aut maps ko tu for of se kar sakta hai 

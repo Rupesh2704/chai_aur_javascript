@@ -4,24 +4,25 @@ const myObject = {
     rb: "Ruby"
 };
 
-for (const i in myObject) {
-    // console.log(`${i} and vlaue is ${myObject[i]}`);
+
+for(const key in myObject){
+    // console.log(`key ${key} and ${myObject[key]}`)
+
 }
 
-const prog = ["Rupesh", "Prachi", "Nilima", "Shekhar"]
+const arr = ['js' , 'java' , 'python' , 'cpp']
 
-for (const i in prog) {
-    // console.log(`${i} -> ${prog[i]}`);
+for(const i in arr){
+    // console.log(arr[i])
+    
 }
 
+
+// Apply for in loop on MAP
 const map = new Map();
-map.set('R', 'Rupesh');
-map.set('P', 'Prachi');
-map.set('s', 'Shekhar');
-map.set('n', ' Nilima');
+map.set('IN', 'INDIA')
+map.set('USA', 'AMERICA')
 
-// console.log(map)
-// maps are not itratable with forin loop    
-for(const key in map){
-    console.log(key);
+for (const key in map) {
+    console.log(key)
 }
