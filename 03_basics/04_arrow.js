@@ -51,4 +51,21 @@ const addtwo = (num1, num2) => num1 + num2;
 
 // If you are trying to return the object then wrap it into () prenthesis
 
-console.log(addtwo(1, 2))
+// console.log(addtwo(1, 2))
+
+
+
+// iMMEDIATE INVOKE FUNCTIONS
+(function rupa() {
+    console.log("DB CONNECTED");
+})();   // we have to end this first code 
+// To remove the global scope pollution we are using IIFE
+
+(() => {
+    console.log(`DB CONNECTED `)
+})();
+
+((name) => {
+    // Parametric IFFE 
+    console.log(`My db is connected to ${name}`);
+})("Rupesh");
