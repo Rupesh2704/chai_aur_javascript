@@ -43,11 +43,11 @@ The main difference is that arrow functions do not have their own this, argument
 They inherit this from the parent scope, while normal functions get their own this based on how they are called.
  */
 
-// Implecit return
+// ◘ Implecit return
 const addtwo = (num1, num2) => num1 + num2;
 // curly brasis mai wrap kar to retun ketyword likna padega samje 
 
-// explicit matlab jab aap return keyword lagate ho 
+// ◘ explicit matlab jab aap return keyword lagate ho 
 
 // If you are trying to return the object then wrap it into () prenthesis
 
