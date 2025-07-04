@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clousure</title>
+</head>
+
+<body>
+
+    <div class="name">
+        <h1>Rupesh</h1>
+        <button id="Orange">Orange</button>
+        <button id="Green">Green</button>
+    </div>
+
+</body>
+
+
+
+<script>
+
+    // ◘◘◘◘◘ Lexical scope ◘◘◘◘◘
+
+    // Papa se dono bacche ( inner1 and inner2 ) sab kuch le sakte hai par dono baccho ne kuch keya ho aur usska credit papa le to nhi hoga
+    // dono bhai ek dusre ko kuch nhi dena cahate
+
+    // function Outer() {
+
+    //     let name = "Rupesh Dahibhate"
+
+    //     function inner1() {
+    //         let finalScoure = "2000"
+    //         console.log(`Inner1 ${name}`)
+    //     }
+
+    //     function inner2() {
+    //         console.log(`Inner2 ${name}`)
+    //         // console.log(finalScoure)
+    //     }
+
+    //     console.log(finalScoure)
+
+    //     inner1()
+    //     inner2()
+
+
+    // }
+
+    // Outer()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+<script>
+    // ◘◘◘◘◘ Closure ◘◘◘◘◘◘
+    // when you return the function to bas function he return nhi hota hai usska pura lexcial scope pura return hota hai
+    // Example
+
+
+
+    function clickHandler(color) {
+
+        // document.body.style.backgroundColor = `${color}`
+        return function () {
+            document.body.style.backgroundColor = color
+        }
+
+    }
+
+    document.getElementById('Orange').onclick = clickHandler('orange')
+    document.getElementById('Green').onclick = clickHandler('green')
+
+
+
+
+
+
+</script>
+
+
+
+
+
+</html>

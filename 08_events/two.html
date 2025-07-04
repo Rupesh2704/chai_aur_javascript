@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="title">Chai aur Rupesh</h1>
+    <button id="stop">Stop</button>
+
+
+
+
+
+
+    <script>
+
+        // After 2 sec this function will be execuate  --> setTimeout()
+
+        const changeText = function () {
+            document.querySelector('#title').innerHTML = 'Rupesh Dahibhate CEO'
+
+        }
+        const changeMe = setTimeout(changeText, 2000)
+
+        // Now if we click the stop button before 2 sec then it will not change 
+        document.querySelector('#stop').addEventListener('click', function () {
+            clearTimeout(changeMe) // reference passed 
+            console.log('stop')
+        })
+
+
+
+        // this function will run in the interval --> setInterval()
+        // setInterval(function(){
+        //     console.log("Prachi Dahibhate")
+        // },2000)
+    </script>
+</body>
+
+</html>
